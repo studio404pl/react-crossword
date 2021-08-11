@@ -1,5 +1,5 @@
 {
-  "name": "@jaredreisinger/react-crossword",
+  "name": "@studio404pl/react-crossword",
   "homepage": "http://JaredReisinger.github.io/react-crossword",
   "version": "2.3.1",
   "description": "A flexible, responsive, and easy-to-use crossword component for React apps",
@@ -16,7 +16,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/JaredReisinger/react-crossword"
+    "url": "https://github.com/studio404pl/react-crossword"
   },
   "license": "MIT",
   "engines": {
