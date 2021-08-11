@@ -8,7 +8,7 @@ _**NOTE:** Due to a short-coming in react-docgen, the methods exposed via `useIm
 | `isCrosswordCorrect()` | _(none)_   | Returns whether the crossword is entirely correct or not.                                           |
 
 ```jsx
-import Crossword from '@jaredreisinger/react-crossword';
+import Crossword from '@studio404pl/react-crossword';
 
 const data = {
   across: {
@@ -83,7 +83,7 @@ Note that these values can be provided either via `ThemeProvider`, or directly a
 #### Using `ThemeProvider`
 
 ```jsx
-import Crossword, { ThemeProvider } from '@jaredreisinger/react-crossword';
+import Crossword, { ThemeProvider } from '@studio404pl/react-crossword';
 
 const data = {
   across: {
@@ -125,7 +125,7 @@ const data = {
 #### Using `theme` property
 
 ```jsx
-import Crossword from '@jaredreisinger/react-crossword';
+import Crossword from '@studio404pl/react-crossword';
 
 const data = {
   across: {
@@ -205,7 +205,7 @@ The following imperative methods can be called on a "ref" handle to the componen
 Purely to show the grid rendering...
 
 ```jsx
-import Crossword from '@jaredreisinger/react-crossword';
+import Crossword from '@studio404pl/react-crossword';
 
 const clue = '';
 

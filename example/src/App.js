@@ -1,5 +1,5 @@
 import React, { useCallback, useRef, useState } from 'react';
-import Crossword from '@jaredreisinger/react-crossword';
+import Crossword from '@studio404pl/react-crossword';
 import styled from 'styled-components';
 
 const data = {
@@ -142,10 +142,10 @@ function App() {
 
   return (
     <Page>
-      <Header>@jaredreisinger/react-crossword example app</Header>
+      <Header>@studio404pl/react-crossword example app</Header>
 
       <p>
-        This is a demo app that makes use of the @jaredreisinger/react-crossword
+        This is a demo app that makes use of the @studio404pl/react-crossword
         component. It excersizes most of the functionality, so that you can see
         how to do so.
       </p>

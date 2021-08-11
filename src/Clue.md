@@ -5,7 +5,7 @@ import {
   Clue,
   CrosswordContext,
   ThemeProvider,
-} from '@jaredreisinger/react-crossword';
+} from '@studio404pl/react-crossword';
 
 <ThemeProvider
   theme={{

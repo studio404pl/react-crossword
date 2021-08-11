@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
-    "@jaredreisinger/react-crossword": "file:..",
+    "@studio404pl/react-crossword": "file:..",
     "immer": "file:../node_modules/immer",
     "react": "file:../node_modules/react",
     "react-dom": "file:../node_modules/react-dom",
