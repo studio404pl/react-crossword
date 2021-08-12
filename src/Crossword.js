@@ -106,6 +106,7 @@ const Crossword = React.forwardRef(
       onLoadedCorrect,
       onCrosswordCorrect,
       onCellChange,
+      onCellFocus,
       useStorage,
       theme,
     },
@@ -300,9 +301,13 @@ const Crossword = React.forwardRef(
         setCurrentDirection(direction);
         setCurrentNumber(candidate[direction]);
 
+        if (onCellFocus) {
+          onCellFocus(row, col, direction);
+        }
+
         return candidate;
       },
-      [getCellData]
+      [getCellData, onCellFocus]
     );
 
     const moveRelative = useCallback(
@@ -537,8 +542,12 @@ const Crossword = React.forwardRef(
         setCurrentNumber(cellData[direction]);
 
         focus();
+
+        if (onCellFocus) {
+          onCellFocus(row, col, direction);
+        }
       },
-      [focused, focusedRow, focusedCol, currentDirection, focus]
+      [focused, focusedRow, focusedCol, currentDirection, focus, onCellFocus]
     );
 
     const handleInputClick = useCallback(
@@ -860,6 +869,14 @@ Crossword.propTypes = {
    *  @since 2.1.0
    */
   onCellChange: PropTypes.func,
+  /**
+   *  callback function called when a cell has an active focus called with `(row, col, direction)` arguments, where the `row` and
+   *  `column` are the 0-based position of the cell, and `char` is the character
+   *  typed (already massaged into upper-case)
+   *
+   *  @since 2.4.0
+   */
+   onCellFocus: PropTypes.func,
 };
 
 Crossword.defaultProps = {
@@ -870,6 +887,7 @@ Crossword.defaultProps = {
   onLoadedCorrect: null,
   onCrosswordCorrect: null,
   onCellChange: null,
+  onCellFocus: null,
 };
 
 export default Crossword;
