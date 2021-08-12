@@ -1,7 +1,13 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 
+import styled from 'styled-components';
+
 import { CrosswordContext } from './context';
+
+const ActiveClueWrapper = styled.div.attrs((props) => ({
+  className: `activeClue${props.correct ? ' correct' : ''}`,
+}))``;
 
 export default function ActiveClue({ clues }) {
   const { focused, selectedDirection, selectedNumber } = useContext(
@@ -25,7 +31,11 @@ export default function ActiveClue({ clues }) {
     return null;
   }
 
-  return <div className="activeClue">{activeClue.clue}</div>;
+  return (
+    <ActiveClueWrapper correct={activeClue.correct}>
+      {activeClue.clue}
+    </ActiveClueWrapper>
+  );
 }
 
 ActiveClue.propTypes = {
