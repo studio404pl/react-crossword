@@ -11,6 +11,7 @@ import PropTypes from 'prop-types';
 import produce from 'immer';
 import styled, { ThemeContext, ThemeProvider } from 'styled-components';
 
+import ActiveClue from './ActiveClue';
 import Cell from './Cell';
 import DirectionClues from './DirectionClues';
 
@@ -537,6 +538,10 @@ const Crossword = React.forwardRef(
         ) {
           setCurrentDirection(other);
           direction = other;
+
+          if (onCellFocus) {
+            onCellFocus(row, col, direction);
+          }
         }
 
         setCurrentNumber(cellData[direction]);
@@ -792,6 +797,7 @@ const Crossword = React.forwardRef(
                 </div>
               </GridWrapper>
               <CluesWrapper>
+                {clues && <ActiveClue clues={clues} />}
                 {clues &&
                   bothDirections.map((direction) => (
                     <DirectionClues
@@ -876,7 +882,7 @@ Crossword.propTypes = {
    *
    *  @since 2.4.0
    */
-   onCellFocus: PropTypes.func,
+  onCellFocus: PropTypes.func,
 };
 
 Crossword.defaultProps = {

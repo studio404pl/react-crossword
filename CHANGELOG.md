@@ -1,3 +1,5 @@
+## [2.4.1] minor fixes
+
 ## [2.4.0] improvements
 
 ## [2.3.1](https://github.com/JaredReisinger/react-crossword/compare/v2.3.0...v2.3.1) (2020-10-05)

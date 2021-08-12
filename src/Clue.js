@@ -6,7 +6,9 @@ import styled, { ThemeContext } from 'styled-components';
 import { CrosswordContext } from './context';
 
 const ClueWrapper = styled.div.attrs((props) => ({
-  className: `clue${props.correct ? ' correct' : ''}${props.focused ? ' focused' : ''}`,
+  className: `clue${props.correct ? ' correct' : ''}${
+    props.highlight ? ' highlight' : ''
+  }`,
 }))`
   cursor: default;
   background-color: ${(props) =>
@@ -40,7 +42,6 @@ export default function Clue({
 
   return (
     <ClueWrapper
-      focused={focused}
       highlightBackground={highlightBackground}
       highlight={
         focused && direction === selectedDirection && number === selectedNumber
@@ -49,7 +50,6 @@ export default function Clue({
       {...props}
       onClick={handleClick}
       aria-label={`clue-${number}-${direction}`}
-      data-label={`${number}: ${children}`}
     >
       {number}: {children}
     </ClueWrapper>
