@@ -538,10 +538,6 @@ const Crossword = React.forwardRef(
         ) {
           setCurrentDirection(other);
           direction = other;
-
-          if (onCellFocus) {
-            onCellFocus(row, col, direction);
-          }
         }
 
         setCurrentNumber(cellData[direction]);
@@ -575,6 +571,10 @@ const Crossword = React.forwardRef(
 
         setCurrentNumber(cellData[direction]);
         focus();
+
+        if (onCellFocus) {
+          onCellFocus(focusedRow, focusedCol, direction);
+        }
       },
       [currentDirection, focusedRow, focusedCol, getCellData, focus]
     );
@@ -585,6 +585,10 @@ const Crossword = React.forwardRef(
         // TODO: sanity-check info?
         moveTo(info.row, info.col, direction);
         focus();
+
+        if (onCellFocus) {
+          onCellFocus(info.row, info.col, direction);
+        }
       },
       [data, moveTo, focus]
     );
