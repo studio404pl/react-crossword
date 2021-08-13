@@ -40,8 +40,7 @@
     "doc:build": "styleguidist build",
     "doc:deploy": "npm run doc:build && gh-pages --dist styleguide",
     "#snyk-protect": "snyk protect",
-    "#prepare": "npm run snyk-protect",
-    "prepare": "npm run build"
+    "#prepare": "npm run snyk-protect"
   },
   "files": [
     "/dist",

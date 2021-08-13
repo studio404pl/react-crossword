@@ -4,7 +4,7 @@ node_modules/
 # builds
 coverage/
 build/
-dist/
+#dist/
 .rpt2_cache
 styleguide/
 
