@@ -47,9 +47,7 @@ var OuterWrapper = _styledComponents["default"].div.attrs(function (props) {
 }).withConfig({
   displayName: "Crossword__OuterWrapper",
   componentId: "sc-15oj72t-0"
-})(["margin:0;padding:0;border:0;display:flex;flex-direction:row;@media (max-width:", "){flex-direction:column;}"], function (props) {
-  return props.theme.columnBreakpoint;
-});
+})([""]);
 
 var GridWrapper = _styledComponents["default"].div.attrs(function () {
   return {
@@ -58,7 +56,7 @@ var GridWrapper = _styledComponents["default"].div.attrs(function () {
 }).withConfig({
   displayName: "Crossword__GridWrapper",
   componentId: "sc-15oj72t-1"
-})(["min-width:20rem;max-width:60rem;width:auto;flex:2 1 50%;"]);
+})([""]);
 
 var CluesWrapper = _styledComponents["default"].div.attrs(function () {
   return {
@@ -67,9 +65,7 @@ var CluesWrapper = _styledComponents["default"].div.attrs(function () {
 }).withConfig({
   displayName: "Crossword__CluesWrapper",
   componentId: "sc-15oj72t-2"
-})(["padding:0 1em;flex:1 2 25%;@media (max-width:", "){margin-top:2em;}.direction{margin-bottom:2em;.header{margin-top:0;margin-bottom:0.5em;}div{margin-top:0.5em;}}"], function (props) {
-  return props.theme.columnBreakpoint;
-});
+})([""]);
 /**
  * The primary, and default, export from the react-crossword library, Crossword
  * renders an answer grid and clues, and manages data and user interaction.

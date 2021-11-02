@@ -42,55 +42,15 @@ const defaultTheme = {
 // eslint-disable-next-line
 const OuterWrapper = styled.div.attrs((props) => ({
   className: `crossword${props.correct ? ' correct' : ''}`,
-}))`
-  margin: 0;
-  padding: 0;
-  border: 0;
-  /* position: relative; */
-  /* width: 40%; */
-  display: flex;
-  flex-direction: row;
-
-  @media (max-width: ${(props) => props.theme.columnBreakpoint}) {
-    flex-direction: column;
-  }
-`;
+}))``;
 
 const GridWrapper = styled.div.attrs((props) => ({
   className: 'grid',
-}))`
-  /* position: relative; */
-  min-width: 20rem;
-  max-width: 60rem; /* Should the size matter? */
-  width: auto;
-  flex: 2 1 50%;
-`;
+}))``;
 
 const CluesWrapper = styled.div.attrs((props) => ({
   className: 'clues',
-}))`
-  padding: 0 1em;
-  flex: 1 2 25%;
-
-  @media (max-width: ${(props) => props.theme.columnBreakpoint}) {
-    margin-top: 2em;
-  }
-
-  .direction {
-    margin-bottom: 2em;
-    /* padding: 0 1em;
-    flex: 1 1 20%; */
-
-    .header {
-      margin-top: 0;
-      margin-bottom: 0.5em;
-    }
-
-    div {
-      margin-top: 0.5em;
-    }
-  }
-`;
+}))``;
 
 /**
  * The primary, and default, export from the react-crossword library, Crossword
