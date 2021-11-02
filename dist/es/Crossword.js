@@ -29,8 +29,6 @@ var _util = require("./util");
 
 var _context = require("./context");
 
-// TODO: make this a component property!
-var defaultStorageKey = 'guesses';
 var defaultTheme = {
   columnBreakpoint: '768px',
   gridBackground: 'rgb(0,0,0)',
@@ -85,6 +83,7 @@ var Crossword = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
       onCrosswordCorrect = _ref.onCrosswordCorrect,
       onCellChange = _ref.onCellChange,
       onCellFocus = _ref.onCellFocus,
+      storageKey = _ref.storageKey,
       useStorage = _ref.useStorage,
       theme = _ref.theme;
 
@@ -443,7 +442,7 @@ var Crossword = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
     var loadedCorrect;
 
     if (useStorage) {
-      (0, _util.loadGuesses)(gridData, defaultStorageKey);
+      (0, _util.loadGuesses)(gridData, storageKey);
       loadedCorrect = (0, _util.findCorrectAnswers)(data, gridData);
       loadedCorrect.forEach(function (_ref3) {
         var direction = _ref3[0],
@@ -476,7 +475,7 @@ var Crossword = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
       return;
     }
 
-    (0, _util.saveGuesses)(gridData, defaultStorageKey);
+    (0, _util.saveGuesses)(gridData, storageKey);
   }, [gridData, useStorage]);
   var handleCellClick = (0, _react.useCallback)(function (cellData) {
     var row = cellData.row,
@@ -570,7 +569,7 @@ var Crossword = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
         }));
 
         if (useStorage) {
-          (0, _util.clearGuesses)(defaultStorageKey);
+          (0, _util.clearGuesses)(storageKey);
         }
       },
 

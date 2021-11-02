@@ -28,9 +28,6 @@ import {
 
 import { CrosswordContext, CrosswordSizeContext } from './context';
 
-// TODO: make this a component property!
-const defaultStorageKey = 'guesses';
-
 const defaultTheme = {
   columnBreakpoint: '768px',
   gridBackground: 'rgb(0,0,0)',
@@ -108,6 +105,8 @@ const Crossword = React.forwardRef(
       onCrosswordCorrect,
       onCellChange,
       onCellFocus,
+      // eslint-disable-next-line react/prop-types
+      storageKey,
       useStorage,
       theme,
     },
@@ -476,7 +475,7 @@ const Crossword = React.forwardRef(
 
       let loadedCorrect;
       if (useStorage) {
-        loadGuesses(gridData, defaultStorageKey);
+        loadGuesses(gridData, storageKey);
         loadedCorrect = findCorrectAnswers(data, gridData);
 
         loadedCorrect.forEach(([direction, num]) => {
@@ -511,7 +510,7 @@ const Crossword = React.forwardRef(
         return;
       }
 
-      saveGuesses(gridData, defaultStorageKey);
+      saveGuesses(gridData, storageKey);
     }, [gridData, useStorage]);
 
     const handleCellClick = useCallback(
@@ -632,7 +631,7 @@ const Crossword = React.forwardRef(
           );
 
           if (useStorage) {
-            clearGuesses(defaultStorageKey);
+            clearGuesses(storageKey);
           }
         },
 
